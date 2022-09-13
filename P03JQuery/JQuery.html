@@ -1,0 +1,128 @@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<title>TABLE JQuery</title>
+<center>
+<style>
+	td {
+    background: cyan;
+    cursor: pointer;
+    transition: 2s;
+  }
+
+  td:hover{
+    background: white ;
+
+  }
+  body{
+    background: lightgrey;
+  }
+  .tabelku{
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    text-align: center;
+    margin-top: 50px;
+    box-shadow: black;
+  }
+</style>
+  <h1>5 Kawan Baikku</h1>
+<table class="tabelku">
+	<tr>
+		<td>No</td>
+		<td>Nama</td>
+		<td>Alamat</td>
+		<td>Aksi</td>
+	</tr>
+
+	<tr id="row__1">
+    	<td>1</td>
+    	<td class="nama_mhs">Ijal</td>
+    	<td class="alamat">Pilang Sari</td>
+    	<td class="hapus" id="hapus__1">Hapus</td>
+  	</tr>
+
+  	<tr id="row__2">
+    	<td>2</td>
+    	<td class="nama_mhs">Fardhan</td>
+    	<td class="alamat">Kebon pelok</td>
+    	<td class="hapus" id="hapus__2">Hapus</td>
+  	</tr>
+
+  	<tr id="row__3">
+    	<td>3</td>
+    	<td class="nama_mhs">Rafi</td>
+    	<td class="alamat">Perum</td>
+    	<td class="hapus" id="hapus__3">Hapus</td>
+  	</tr>
+
+  	 <tr id="row__4">
+    	<td>4</td>
+    	<td class="nama_mhs">Rochman</td>
+    	<td class="alamat">Pegambiran</td>
+    	<td class="hapus" id="hapus__4">Hapus</td>
+  	</tr>
+
+  	<tr id="row__5">
+    	<td>1</td>
+    	<td class="nama_mhs">Aldi</td>
+    	<td class="alamat">Arum Sari</td>
+    	<td class="hapus" id="hapus__5">Hapus</td>
+  	</tr>
+</table>
+</center>
+
+<script>
+	$(document).ready(function(){
+		// akert(0)
+		$('.nama_mhs').click(function(){
+			//alert(1)
+			let isi = $(this).text();
+			//alert(isi);
+
+			let isi2 = prompt('ubah dengan:', isi);
+			if (!isi2)return;
+
+			// alert(isi2);
+
+			$(this).text(isi2);
+		
+	})
+
+		$('.alamat').click(function(){
+    //alert(4)
+    let isi = $(this).text();
+    //alert(isi);
+
+    let isi4 = prompt('ubah dengan:', isi);
+    if (!isi4) return;
+
+   // alert(isi4);
+
+   $(this).text(isi4);
+
+
+   })
+
+
+	$('.hapus').click(function(){
+    //alert(1)
+
+    let yakin = confirm('yakin mau menghapus?');
+    if(!yakin) return;
+
+    let id = $(this).prop('id');
+    //alert(id);
+
+    let rid = id.split('__');
+    let baris_ke = rid[1];
+
+    //alert(baris_ke); 
+
+    $('#row__'+baris_ke).slideUp()
+
+    //alert('Anda yakin')
+   })
+  
+  })
+
+</script>
